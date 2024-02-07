@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, rgb(36, 27, 112), #ffffff);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .login-container {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: rgb(36, 27, 112);
+            margin-bottom: 30px;
+        }
+
+        input[type="text"], input[type="password"], input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgb(36, 27, 112);
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(36, 27, 112);
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #001b70;
+        }
+
+        .signup-link {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: rgb(36, 27, 112);
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript" src="/lib/jquery/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" name="userId" placeholder="User ID">
+        <input type="password" name="userPassword" placeholder="Password">
+        <input type="submit" value="Login">
+    </form>
+    <div class="signup-link">
+        Don't have an account? <a href="#">Sign up here</a>.
+    </div>
+</div>
+</body>
+<script src="/js/login.js"></script>
+</html>

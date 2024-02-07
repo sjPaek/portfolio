@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko" >
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav  ">
+      <th:block th:each="menu:${@menuList.mainMenuList}">
+          <li class="nav-item active">
+              <a class="nav-link" th:href="${menu.getUrl()}"><span class="material-icons text-white" style="font-size: 35px" th:text="${menu.getIcon()}"></span><th:block th:text="${menu.getName()}"></th:block></a>
+          </li>
+
+      </th:block>
+
+        <form class="form-inline">
+            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </form>
+    </ul>
+</div>
+</html>
