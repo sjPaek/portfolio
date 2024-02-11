@@ -6,11 +6,11 @@ const evtSubmitLogin = (e) => {
     const post = $.post(url, $('#loginForm').serialize());
     const {ok, msg} = post;
 
-    if(ok){
-        location.href="/";
-    }else{
-        location.href="/login";
-    }
+    // if(ok){
+    //     location.href="/";
+    // }else{
+    //     location.href="/login";
+    // }
 }
 
 $(() => {

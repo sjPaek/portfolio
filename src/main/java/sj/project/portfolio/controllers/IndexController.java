@@ -10,16 +10,6 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/project")
-    public String project (){
-        return "project";
-    }
-
-    @GetMapping("/study")
-    public String study (){
-        return "about";
-    }
-
     @GetMapping("/why")
     public String why (){
         return "why";
