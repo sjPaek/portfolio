@@ -25,9 +25,9 @@ import sj.project.portfolio.models.MessageType;
 @Slf4j
 public class ChatController {
 
-    @GetMapping("/chat")
-    public String chat() {
-        return "chat";
-    }
+    // @GetMapping("/chat")
+    // public String chat() {
+    //     return "chat";
+    // }
     
 }
