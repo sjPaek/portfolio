@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -40,9 +41,13 @@ public class ChatController {
         template.convertAndSend("/sub/chat/room");
     }
 
-    @MessageMapping(value = "/chat/message")
-    public void message(ChatMessageModel message){
-        template.convertAndSend("/sub/chat/room");
+    @MessageMapping(value = "/{roomSeq}") //여기로 전송되면 메소드 호출
+    @SendTo("/room/{roomSeq}") // 구독하고 있는 장소로 메시지 전송 (목적지)
+    public ChatMessageModel message(ChatMessageModel message, @DestinationVariable Long roomSeq){
+        return ChatMessageModel.builder()
+                .message(message.getMessage())
+                .sender("temp")
+                .build();
     }
 
 }

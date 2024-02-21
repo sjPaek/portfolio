@@ -11,10 +11,12 @@ import sj.project.portfolio.models.MessageType;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ChatMessageModel {
+
+    private int roomSeq;
     private String type;
     private String sender;
     private String receiver;
-    private Object data;
+    private String message;
 
     public void setSender(String sender){this.sender = sender;}
 
