@@ -28,16 +28,4 @@ public class ChatController {
         template.convertAndSend("/sub/chat/room");
     }
 
-    @MessageMapping(value = "/hello") //여기로 전송되면 메소드 호출
-    // @SendTo("/room/{roomSeq}") // 구독하고 있는 장소로 메시지 전송 (목적지)
-    public void message(ChatMessageModel message, @DestinationVariable Long roomSeq){
-        
-        log.info(message.toString());
-        template.convertAndSend("/sub/channel/" + message.getRoomSeq(), message);
-        // return ChatMessageModel.builder()
-        //         .message(message.getMessage())
-        //         .sender("temp")
-        //         .build();
-    }
-
 }
