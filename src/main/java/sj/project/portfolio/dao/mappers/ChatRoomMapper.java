@@ -6,7 +6,7 @@ import sj.project.portfolio.dao.models.RoomModel;
 import java.util.List;
 
 @Mapper
-public interface RoomsMapper {
+public interface ChatRoomMapper {
 
-    List<RoomModel> selectRooms ();
+    List<RoomModel> selectChatRooms ();
 }
