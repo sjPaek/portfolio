@@ -23,9 +23,10 @@ public class ChatController {
         return "chat";
     }
 
-    @MessageMapping(value = "/chat/enter")
-    public void enter(ChatMessageModel message){
-        template.convertAndSend("/sub/chat/room");
+    @MessageMapping(value = "/{roomId}")
+    public void chat(@DestinationVariable Long roomId, ChatMessageModel model){
+        log.info(model.toString());
+        template.convertAndSend("/sub/chat/room/1", model);
     }
 
 }

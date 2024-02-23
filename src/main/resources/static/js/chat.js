@@ -1,26 +1,28 @@
-var stompClient;
-const funcWebSocketConnection = () => {
-    var socket = new SockJS("/stomp/chat");
+let stompClient = null;
 
+const funcConnection = () => {
+    let socket = new SockJS("http://localhost:8080/ws");
+    
     stompClient = Stomp.over(socket);
-
-
-    stompClient.subscribe("/room/1", function(){
-        console.log('subscribe');
+    
+    stompClient.connect({}, function(frame){
+        console.log("connected");
     })
+    
 }
 
 const funcSendChat = () => {
-    stompClient.send("/send/1", {},
-    JSON.stringify({
-        'sender' : "A",
-        'message' : $('#message').val()
-    }))
+    stompClient.send("/pub/1", {}, 
+        JSON.stringify({
+            "sender" : "soonjae",
+            "message" : $('#message').val()
+        })
+    );
+
     $('#message').val('');
 }
 
-
 $(() => {
-    funcWebSocketConnection();
+    funcConnection();
     $('#sendBtn').on('click', funcSendChat);
 })
