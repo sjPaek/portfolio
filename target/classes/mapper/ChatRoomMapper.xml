@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="sj.project.portfolio.dao.mappers.RoomsMapper">
+<mapper namespace="sj.project.portfolio.dao.mappers.ChatRoomMapper">
 
-    <select id="selectRooms" resultType="RoomModel">
-        select * from rooms
+    <select id="selectChatRooms" resultType="RoomModel">
+        select * from chat_room
     </select>
 
 </mapper>
