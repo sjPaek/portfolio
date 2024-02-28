@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko" >
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko">
 
-<th:block th:replace="/common/header"></th:block>
-
+<!--<th:block th:replace="/common/header :: header"></th:block>-->
+<head>
+    <div th:replace="/common/header :: header"></div>
+</head>
 <body class="sub_page">
 
 <div class="hero_area">
@@ -18,12 +20,14 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
                 <a class="navbar-brand" href="index.html">
-            <span>
-              SoonJae's Portfolio
-            </span>
+                    <span>
+                      SoonJae's Portfolio
+                    </span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                     <span class=""> </span>
                 </button>
                 <th:block th:replace="/common/menu"></th:block>
@@ -44,7 +48,7 @@
                     <span>Project</span> History
                 </h2>
                 <p>
-<!--                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration-->
+                    <!--                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration-->
                 </p>
             </div>
             <div class="row">
@@ -56,7 +60,7 @@
                         </div>
                         <div class="detail-box">
                             <h5>
-                               BEMS
+                                BEMS
                             </h5>
                             <p>
                                 건물 에너지 관리 시스템 <br>
@@ -96,10 +100,10 @@
                         </div>
                         <div class="detail-box">
                             <h5>
-                                위험물 관리 (울산소방본부)
+                                위험물 관리
                             </h5>
                             <p>
-                                지도를 이용한 울산 내 위험물 관리 <br>
+                                지도를 이용한 범위 내 위험물 관리 <br>
                                 2023-12 ~ 2024-01
                             </p>
                             <a href="">
@@ -121,7 +125,7 @@
                                 COMPANY HOMEPAGE
                             </h5>
                             <p>
-                                회사 홈페이지  <br>
+                                회사 홈페이지 <br>
                                 2022-5 ~ 2022-7
                             </p>
                             <a href="">
@@ -280,15 +284,16 @@
 <!-- end info section -->
 
 <!-- footer section -->
-<section class="footer_section">
-    <div class="container">
-        <p>
-            &copy; <span id="displayYear"></span> All Rights Reserved By
-            <a href="https://html.design/">Free Html Templates</a>
-        </p>
-    </div>
-</section>
-
+<!--<section class="footer_section">-->
+<!--    <div class="container">-->
+<!--        <p>-->
+<!--            &copy; <span id="displayYear"></span> All Rights Reserved By-->
+<!--            <a href="https://html.design/">Free Html Templates</a>-->
+<!--        </p>-->
+<!--    </div>-->
+<!--</section>-->
+<th:block th:replace="/common/footer.html"></th:block>
 </body>
 
+<script src="/js/project.js"></script>
 </html>

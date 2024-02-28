@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko">
+
+<!--<th:block th:replace="/common/header :: header"></th:block>-->
+<head>
+    <div th:replace="/common/header :: header"></div>
+</head>
+<body class="sub_page">
+<div class="hero_area">
+
+    <div class="hero_bg_box">
+        <div class="bg_img_box">
+            <img src="/img/hero-bg.png" alt="">
+        </div>
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="/">
+                    <span>
+                      SoonJae's Portfolio
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""> </span>
+                </button>
+                <th:block th:replace="/common/menu"></th:block>
+            </nav>
+        </div>
+    </header>
+    <!-- end header section -->
+</div>
+
+
+<!-- service section -->
+
+<section class="service_section layout_padding">
+    <div class="service_container">
+        <div class="container ">
+            <div class="text-right mb-3">
+                <buttom class="btn btn-primary" id="projectInsertBtn">Project 추가</buttom>
+            </div>
+
+            <table class="table">
+                <thead class="text-center">
+                    <th>No</th>
+                    <th>Project Name</th>
+                    <th>Content</th>
+                    <th>Period</th>
+                </thead>
+                <tbody class="text-center" id="projectList">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+
+<th:block th:replace="/common/footer.html"></th:block>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" id="projectModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content rounded-4 shadow">
+            <div class="modal-header">
+                <h3 class="modal-title" id="projectModalTitle">정보 수정</h3>
+                <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="fa-2x">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form id="projectModalForm">
+                    <input name="method" type="hidden" id="method">
+                    <input name="seq" type="hidden" id="seq">
+                    <input name="author" type="hidden" id="author" value="mng">
+                    <div class="row mb-3">
+                        <label for="projectName" class="col-3 col-form-label">Project Name</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="projectName" name="projectName" placeholder="Project Name" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="content" class="col-3 col-form-label">Content</label>
+                        <div class="col">
+                            <textarea class="form-control" rows="5" cols="23" id="content" name="content" placeholder="Content" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="projectStartDtStr" class="col-3 col-form-label">Period</label>
+                        <div class="col">
+                            <div class="row align-items-center">
+                                <div class="col"><input class="form-control" type="date" id="projectStartDtStr" name="projectStartDtStr" required /></div>
+                                <div class="col-auto">~</div>
+                                <div class="col"><input class="form-control" type="date" id="projectEndDtStr" name="projectEndDtStr" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="imageFile" class="col-3 col-form-label">Files</label>
+                        <div class="col">
+                            <div class="row align-items-center">
+                                <div class="col"><input class="form-control" type="file" id="imageFile" name="imageFile" multiple/></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary float-right btn-lg" id="saveBtn">저장</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="/js/projectSetting.js"></script>
+</html>

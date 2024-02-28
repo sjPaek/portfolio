@@ -8,6 +8,7 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import sj.project.portfolio.dao.models.ChatMessageModel;
 
 @Controller
@@ -17,15 +18,15 @@ public class ChatController {
 
     private final SimpMessagingTemplate template;
 
-    // @GetMapping("/chat")
-    // public String chat() {
-    //     return "chat";
-    // }
+     @GetMapping("/chat")
+     public String chat() {
+         return "chat";
+     }
 
-    @MessageMapping(value = "/chat/enter")
-    public void enter(ChatMessageModel message){
-        template.convertAndSend("/sub/chat/room");
-    }
+//    @MessageMapping(value = "/chat/enter")
+//    public void enter(ChatMessageModel message){
+//        template.convertAndSend("/sub/chat/room");
+//    }
 
     @MessageMapping(value = "/{roomSeq}") //여기로 전송되면 메소드 호출
 //    @SendTo("/room/{roomSeq}") // 구독하고 있는 장소로 메시지 전송 (목적지)

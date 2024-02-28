@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sj.project.portfolio.dao.mappers.ProjectMapper">
+
+    <select id="selectProjects" resultType="ProjectModel">
+        select * from project;
+    </select>
+
+    <select id="selectProjectBySeq" resultType="ProjectModel">
+        select * from project where seq = #{seq};
+    </select>
+
+    <insert id="insertProject" parameterType="ProjectModel">
+        insert into project (title, content, author, upload_dt, update_dt) values (#{title}, #{content}, #{author}, #{uploadDt}, #{updateDt});
+    </insert>
+
+    <update id="updateProject" parameterType="ProjectModel">
+        update project set project_name=#{projectName}, content=#{content}, author=#{author}, update_dt = #{updateDt}, project_start_dt = #{projectStartDt}, project_end_dt = #{projectEndDt} where seq = #{seq}
+    </update>
+
+
+</mapper>
