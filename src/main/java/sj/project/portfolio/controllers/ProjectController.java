@@ -45,7 +45,7 @@ public class ProjectController {
 
     @PostMapping("/project/update")
     public @ResponseBody ResponseModel<ProjectModel> updateProject(ProjectModel model){
-        log.info(model.toString());
+        //project name 중복체크
         model.setProjectStartDt(projectService.stringToLocalTime(model.getProjectStartDtStr()));
         model.setProjectEndDt(projectService.stringToLocalTime(model.getProjectEndDtStr()));
         model.setUpdateDt(LocalDateTime.now());
